@@ -42,7 +42,7 @@ class Node:
         self.wins += wins
         self.ties += ties
         self.visits += wins + ties + losses
-        if self.parent is not None:
+        if not self.root:
             self.parent.backpropagate(losses, ties, wins)
 
 @nb.jit(nopython=True)
@@ -68,7 +68,7 @@ def parallel(board: np.ndarray, n_sims: int, player: int) -> typing.Tuple[int,in
         else: losses += 1
     return wins, ties, losses
 
-def monte_carlo_eval(root: Node, board: np.ndarray, n_nodes: int = 1000, n_sims: int = 20) -> None:
+def monte_carlo_eval(root: Node, board: np.ndarray, n_nodes: int = 2000, n_sims: int = 20) -> None:
     for _ in range(n_nodes):
         board_copy = np.copy(board)
         leaf = root.select(board_copy)
