@@ -23,6 +23,6 @@ Consider the following game state, which I encountered while facing the AI off a
 <img src="static/blunder.png" width="300"/>
 </p>
 
-The AI made the move in white, which was immediately followed by the winning move in black. How could it make such an obvious blunder?? Then it hit me: the AI doesn't simulate terminal states, so it didn't even consider the move in black. Instead, it considered every other move—which lo and behold **would've allowed the AI to win in the next move, playing in the exact slot that was overlooked**—explaining why it made the move in the first place.
+The AI made the move in white, which was immediately followed by the winning move in black. How could it make such an obvious blunder?? Then it hit me: since the AI doesn't simulate terminal states, it didn't even consider the move in black. Instead, it considered every other move by red—each of which **would've allowed the AI an immediate win, playing in the exact slot that was overlooked**—explaining why it made the move in the first place.
 
 The updated implementation takes the opposite approach, not only simulating terminal moves but also prioritizing them, allowing them to inform all the nodes above them.
