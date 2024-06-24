@@ -1,5 +1,10 @@
 # Connect 4 MCTS
 
+<figure align="center">
+<img src="static/nice_win.gif" width="300"/>
+<figcaption>MCTS (Red) finds a nice win against a real player</figcaption>
+</figure>
+
 This project is an implementation of [Monte Carlo tree search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) (MCTS) for [Connect 4](https://en.wikipedia.org/wiki/Connect_Four). Briefly, MCTS is a simulation-based algorithm that uses random sampling and heuristics to make decisions in a game or problem-solving scenario. Generally, there are four steps:
 
 - Selection: traversing the game tree to select a promising node while balancing [exploration and exploitation](https://en.wikipedia.org/wiki/Exploration-exploitation_dilemma). This implementation uses UCT (UCB applied to trees)
@@ -8,6 +13,14 @@ This project is an implementation of [Monte Carlo tree search](https://en.wikipe
 - Backpropagation: update the statistics of the nodes along the path from the root to the selected node
 
 ## Results
+
+In a public tournament, the bot was able to place in the top 1% (19/2460), with an impressive record of 65 wins to 8 losses. Note that it's likely other players used similar tools.
+
+<p align="center">
+<img src="static/tournament.png" width="300"/>
+</p>
+
+---
 
 On my machine, I was able to complete 29,403,700 rollouts in 70.8770 seconds.
 - That's 414,855 rollouts per second over 1,470,185 nodes total!
