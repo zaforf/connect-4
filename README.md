@@ -1,11 +1,9 @@
 # Connect 4 MCTS
 
 <div align="center">
-    <figure>
-        <img src="static/nice_win.gif" width="300"/>
-        <figcaption>MCTS (Red) finds a nice win against a real player</figcaption>
-    </figure>
-</div>
+    <img src="static/nice_win.gif" width="300"/><br>
+    <em>MCTS (Red) finds a nice win against a real player</em>
+</div><br>
 
 This project is an implementation of [Monte Carlo tree search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) (MCTS) for [Connect 4](https://en.wikipedia.org/wiki/Connect_Four). Briefly, MCTS is a simulation-based algorithm that uses random sampling and heuristics to make decisions in a game or problem-solving scenario. Generally, there are four steps:
 
